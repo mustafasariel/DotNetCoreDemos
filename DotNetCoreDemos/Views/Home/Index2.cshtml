@@ -1,0 +1,50 @@
+﻿
+@model DotNetCoreDemos.Models.ViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index2</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td colspan="2">    <b>Öğrenciler</b></td>
+        </tr>
+
+        @foreach (var item in Model.Students)
+        {
+            <tr>
+                <td>@item.Number</td>
+                <td>@item.Name</td>
+            </tr>
+        }
+    </table>
+
+    <table>
+        <tr>
+            <td colspan="2">  <b>Öğretmenler</b></td>
+        </tr>
+
+        @foreach (var item in Model.Teachers)
+        {
+            <tr>
+                <td> @item.Name</td>
+                <td> @item.Lastname</td>
+            </tr>
+        }
+         </table>
+
+    @using (Html.BeginForm())
+    {
+        <input type="text" id="" name="" />
+        <button type="submit">Gönder</button>   
+    }
+</body>
+</html>
