@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="glyphicon-menu-up">
+        menu
+    </div>
+    <div class="glyphicon-circle-arrow-up">
+
+        @RenderBody()
+    </div>
+
+    <div>
+        footer
+
+
+
+    </div>
+
+    <div>
+        @RenderSection("MySection",false)
+    </div>
+</body>
+</html>

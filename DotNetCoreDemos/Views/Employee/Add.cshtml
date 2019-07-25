@@ -3,20 +3,13 @@
 
 
 @{
-    Layout = null;
+    Layout = "~/Views/shared/_Layout.cshtml";
 }
 
+<div>
+    employee add
+</div>
 
-
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Add Employee</title>
-</head>
-<body>
 
     <form asp-controller="Employee" asp-action="Add">
 
@@ -34,6 +27,7 @@
        
   </category-list>
 
-    
-</body>
-</html>
+@section MySection{
+    som content
+ }
+

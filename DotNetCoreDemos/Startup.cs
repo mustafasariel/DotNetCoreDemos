@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DotNetCoreDemos
@@ -25,15 +26,16 @@ namespace DotNetCoreDemos
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseMvc(routes =>
-            {
-            routes.MapRoute("default", 
-                template:"{controller=home}/{action=index}/{id?}"
-                );
-
-            });
+            app.UseMvc(ConfigureRoutes);
            
           
+        }
+
+        private void ConfigureRoutes(IRouteBuilder routeBuilder)
+        {
+            routeBuilder.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+
+            routeBuilder.MapRoute("MyRoute", "mustafa/{controller=employee}/{action=add}/{id?}");
         }
     }
 }
