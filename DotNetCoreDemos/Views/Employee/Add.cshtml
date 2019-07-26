@@ -6,6 +6,7 @@
     Layout = "~/Views/shared/_Layout.cshtml";
 }
 
+
 <div>
     employee add
 </div>
@@ -17,7 +18,7 @@
       <label asp-for="Employee.Lastname"></label> <input asp-for="Employee.Lastname" /><br />
         <label asp-for="Employee.CityCode"></label> <select asp-for="Employee.CityCode" asp-items="Model.Cities" ></select><br />
  
-        <button type="submit">Add</button>
+        <button class="btn btn-success" type="submit">Add</button>
     </form>
 
     <br />
