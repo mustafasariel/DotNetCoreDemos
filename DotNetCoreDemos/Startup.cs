@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DotNetCoreDemos.Models;
 using DotNetCoreDemos.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DotNetCoreDemos
@@ -17,8 +19,17 @@ namespace DotNetCoreDemos
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ICalculate, KDV8>();
+            //services.AddSingleton<ICalculate, KDV18>();
+           // services.AddScoped<ICalculate, KDV8>(); new gibi
+            services.AddTransient<ICalculate, KDV18>();
+
+
             services.AddMvc();
+
+            var connection = @"Server = msariel\SQLEXPRESS; Database = mvcDemodb; Trusted_Connection = true";
+
+            services.AddDbContext<BlogContex>(option => option.UseSqlServer(connection,null));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

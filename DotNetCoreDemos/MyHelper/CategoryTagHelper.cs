@@ -16,9 +16,9 @@ namespace DotNetCoreDemos.MyHelper
         {
             categories = new List<Category>
             {
-                new Category{Id="1",Name="Programlama"},
-                new Category{Name="Yapay Zeka",Id="2"},
-                new Category{Id="3",Name   ="Tasarım"}
+                new Category{Id=1,Name="Programlama"},
+                new Category{Name="Yapay Zeka",Id=2},
+                new Category{Id=3,Name   ="Tasarım"}
             };
         }
 
